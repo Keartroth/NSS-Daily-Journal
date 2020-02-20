@@ -1,8 +1,9 @@
 .backgroundImage {
     background-image: url("https://www.tagesspiegel.de/images/1496907/24145614/2-format6001.jpg?inIsFirst=true");
     background-repeat: no-repeat;
-    height: 300px;
-    top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
     width: 750px;
 }
 
@@ -10,7 +11,7 @@
     color: white;
     font-family: 'Eagle Lake', cursive;
     left: 410px;
-    position: fixed;
+    position: relative;
     top: 110px;
 
 }
@@ -34,7 +35,7 @@ body {
 
 .formContainer {
     display: inline-block;
-    margin-top: 300px;
+    margin-top: 260px;
 }
 
 #journal {
