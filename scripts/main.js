@@ -4,8 +4,8 @@ const journalEntry = () => {
     const dateData = document.getElementById("date").value;
     const journalData = document.getElementById("journal").value;
 
-    var myData = `Concepts Covered:     ${conceptsData}     Current Mood:   ${moodData}                 Daily Journal Entry: ${journalData}`;
-    window.open(`mailto:mecarrolljr@tutanota.com?subject=NSS Daily Journal: ${dateData}&body=${myData}`);
+    var myData = `Concepts Covered:     ${conceptsData}                                   Daily Journal Entry: ${journalData}`;
+    window.open(`mailto:mecarrolljr@tutanota.com?subject=NSS Daily Journal: ${dateData}   Current Mood:   ${moodData}&body=${myData}`);
 }
 
 // This is sample; do not edit or delete!!
