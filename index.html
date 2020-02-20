@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Eagle+Lake|Share+Tech+Mono&display=swap" rel="stylesheet" />
+    <title>Therapy</title>
+</head>
+<body>
+    <div class="backgroundImage">
+        <div class="backgroundText">
+            <h2>How was your day?</h2>
+        </div>
+        <div class="formContainer">
+            <form action="" class="form" id="journalForm">
+                <label for="concepts" id="conceptsLabel" class="labels">Concepts Covered</label>
+                <label for="mood" id="moodLabel" class="labels">Current Mood</label>
+                <label for="date" id="dateLabel" class="labels">Today's Date</label><br>
+                <input type="text" name="Concepts" id="concepts" />
+                <select type="select" name="Mood" id="mood">
+                    <option value="😍 excited 🤩">😍 excited 🤩</option>
+                    <option value="mindBlown">💣.🧠.💥.🤯</option>
+                    <option value="pumped">😤 pumped 😆</option>
+                    <option value="happy">😀 happy 😁</option>
+                    <option value="smart">🧐 smart 🤓</option>
+                    <option value="funky">😏 funky 😎</option>
+                    <option value="normal">🙃 normal 🙃</option>
+                    <option value="sorrow">😢 sorrowful 😭</option>
+                    <option value="angry">😡 anrgy 🤬</option>
+                    <option value="sick">🤢 sick 🤮</option>
+                    <option value="ennui">😶 ennui 😑</option>
+                    <option value="overwhelmed">😖 overwhelmed 😵</option>
+                    <option value="pitOfDespair">☠ PIT OF DESPAIR ☠</option>
+                </select>
+                <input type="date" name="Date" id="date"/><br>
+                <label for="journal" id="journalLabel" class="labels">Daily Journal</label><br>
+                <textarea name="Journal" id="journal" cols="30" rows="10"></textarea>
+        
+            </form>
+        
+            <button type="submit" value="Submit" id="journalButton" onclick="journalEntry()">Log Journal Entry</button>
+    
+        </div>
+    </div>
+    
+    <script src="scripts/main.js"></script>
+</body>
+</html>

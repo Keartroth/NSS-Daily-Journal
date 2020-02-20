@@ -1,0 +1,65 @@
+.backgroundImage {
+    background-image: url("https://www.tagesspiegel.de/images/1496907/24145614/2-format6001.jpg?inIsFirst=true");
+    background-repeat: no-repeat;
+    height: 300px;
+    top: 0px;
+    width: 750px;
+}
+
+.backgroundText {
+    color: white;
+    font-family: 'Eagle Lake', cursive;
+    left: 410px;
+    position: fixed;
+    top: 110px;
+
+}
+
+body {
+    background-color: burlywood;
+}
+
+#concepts {
+    height: 18px;
+    width: 335px;
+}
+
+#date {
+    margin-left: 49px;
+}
+
+#dateLabel {
+    margin-left: 108px;
+}
+
+.formContainer {
+    display: inline-block;
+    margin-top: 300px;
+}
+
+#journal {
+    width: 745px;
+}
+
+#journalButton {
+    background-color: rgb(212, 166, 79);
+    display: block;
+    font-family: 'Eagle Lake', cursive;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 1em;
+}
+
+.labels {
+    font-family: 'Share Tech Mono', monospace;
+}
+
+#mood {
+    height: 24px;
+    margin-left: 48px;
+}
+
+#moodLabel {
+    margin-left: 250px;
+}
