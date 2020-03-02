@@ -64,3 +64,8 @@ body {
 #moodLabel {
     margin-left: 250px;
 }
+
+.journalEntry {
+    background-color: whitesmoke;
+    margin-top: 10px;
+}

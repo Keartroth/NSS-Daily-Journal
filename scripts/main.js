@@ -1,4 +1,4 @@
-import { useJournalEntries } from "./journalDataProvider.js";
+import entryListComponent from "./journalEntryList.js";
 
 const journalEntry = () => {    
     const conceptsData = document.getElementById("concepts").value;
@@ -16,4 +16,5 @@ const initializeLogButtonEvent = () => {
 };
 
 
+entryListComponent();
 initializeLogButtonEvent();
