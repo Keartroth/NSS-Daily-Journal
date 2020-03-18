@@ -1,0 +1,25 @@
+{
+    "entries": [
+        {
+        "id": 1,
+        "date": "02/17/2020",
+        "concept": "HTML & CSS",
+        "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
+        "mood": "Ok"
+        },
+        {
+        "id": 2,
+        "date": "02/25/2020",
+        "concept": "GitHub",
+        "entry": "Today we continued working on the group project 'Travel the World: I Don't Know'. We also watched Cohort 37's front end capstones. Many students made capstone projects that dealt with organizing and adding items to a collection (Music, Clothes, Chores, etc) While some were polished and some were lacking finish, all were functional. This MVP (minimum viable product) mindset, along with planning, were the most mentioned recommendations from Cohort 37. Planning out your intentions, not allowing function creep, not working yourself into a bad mental state (TAKE BREAKS!!), listening to the instructors and leaning on fellow classmates will go a long way towards carrying us through the pain of our capstone projects.",
+        "mood": "😶 ennui 😑"
+        },
+        {
+        "id": 3,
+        "date": "02/27/2020",
+        "concept": "Javascript Single Responsibility Principle",
+        "entry": "Daily Journal Entry: Today we covered working as a member of a group in Git-Hub. While the process is tedious, it is an excellent way to ensure integrity of working live code in a group project. Get used to this, Michael! ",
+        "mood": "😖 overwhelmed 😵"
+        }
+    ]
+}
