@@ -1,44 +1,44 @@
 /*
  *   Journal data provider for Daily Journal application
  *
- *      Holds the raw data about each entry and exports
+ *      Accesses the raw data about each entry and exports
  *      functions that other modules can use to filter
  *      the entries for different purposes.
  */
 
-// This is the original data. Can't Touch This.
-const journal = [
-    {
-        id: 1,
-        date: "02/17/2020",
-        concept: "HTML & CSS",
-        entry: "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-        mood: "Ok"
-    },
-    {
-        id: 2,
-        date: "02/25/2020",
-        concept: "GitHub",
-        entry: "We talked about GitHub and how to correctly checkout to new branches, how to make pull requests, and how to merge to master.",
-        mood: "Ok"
-    },
-    {
-        id: 3,
-        date: "02/27/2020",
-        concept: "Javascript Single Responsibility Principle",
-        entry: "We talked about how you should house each javascript module seperately to help alleviate the size of files for code and to help readability.",
-        mood: "Ok"
-    }
-]
+// Sets an empty array, entries, for getEntries to place the parsed data in.
+let entries = [];
 
-/*
-    You export a function that provides a version of the
-    raw data in the format that you want
-*/
+// Returns a copy of the array entries which has been sorted by entry date to be used later.
 export const useJournalEntries = () => {
-    const sortedByDate = journal.sort(
+    const journalEntries = entries.slice();
+    const sortedByDate = journalEntries.sort(
         (currentEntry, nextEntry) =>
             Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
     )
     return sortedByDate;
 }
+
+// Fetches a JSON string of notes data and then converts it to a JavaScript array.
+export const getEntries = () => {
+    return fetch('http://localhost:8088/entries')
+    .then(response => response.json())
+    .then(
+        parsedEntries => {
+            entries = parsedEntries
+        }
+    )
+}
+
+
+/*
+    You export a function that provides a version of the
+    raw data in the format that you want
+*/
+// export const useJournalEntries = () => {
+//     const sortedByDate = journal.sort(
+//         (currentEntry, nextEntry) =>
+//             Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
+//     )
+//     return sortedByDate;
+// }
