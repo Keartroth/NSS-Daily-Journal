@@ -15,11 +15,11 @@
       "mood": "😶 ennui 😑"
     },
     {
-      "id": 3,
       "date": "2020-02-27",
-      "concept": "Javascript Single Responsibility Principle",
-      "entry": "Daily Journal Entry: Today we covered working as a member of a group in Git-Hub. While the process is tedious, it is an excellent way to ensure integrity of working live code in a group project. Get used to this, Michael! ",
-      "mood": "😖 overwhelmed 😵"
+      "concept": "Single Responsibility Principle",
+      "entry": "Today we covered working as a member of a group in Git-Hub. While the process is tedious, it is an excellent way to ensure integrity of working live code in a group project. Get used to this, Michael! ",
+      "mood": "😖 overwhelmed 😵",
+      "id": 3
     },
     {
       "date": "2020-03-19",

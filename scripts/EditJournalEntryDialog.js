@@ -2,9 +2,11 @@ import { useJournalEntries } from "./journalDataProvider.js";
 
 const eventHub = document.querySelector(".container");
 const editDialogContentTarget = document.querySelector(".editDialogContainer");
-
+/*
+ *  Purpose: To render a single journal entry dialog box as a
+ *           form to allow editing of the data in entries.json.
+ */
 export const editJournalEntryDialog = (journalEntryObject) => {
-    // const entryId = `${journalEntryObject.id}`;
     const entryDate = `${journalEntryObject.date}`;
     const entryConcepts = `${journalEntryObject.concept}`;
     const entryEntry = `${journalEntryObject.entry}`;

@@ -1,0 +1,33 @@
+/* CSS style sheet for Journal Entry Form */
+
+#concepts {
+    height: 18px;
+    width: 335px;
+}
+
+#date {
+    margin-left: 49px;
+}
+
+#dateLabel {
+    margin-left: 108px;
+}
+
+.formContainer {
+    display: inline-block;
+    margin-top: 260px;
+}
+
+
+#journal {
+    width: 745px;
+}
+
+#mood {
+    height: 24px;
+    margin-left: 48px;
+}
+
+#moodLabel {
+    margin-left: 250px;
+}

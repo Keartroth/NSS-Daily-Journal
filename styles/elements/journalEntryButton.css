@@ -1,0 +1,10 @@
+/* Css style sheet for Log Journal Enty button */
+#journalButton {
+    background-color: rgb(212, 166, 79);
+    display: block;
+    font-family: 'Eagle Lake', cursive;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 1em;
+}
