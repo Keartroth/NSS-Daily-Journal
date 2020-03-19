@@ -50,3 +50,9 @@ eventHub.addEventListener("journalButtonClicked", customEvent => {
     }
     saveEntry(newEntry)
 })
+
+// Function that resets the form, #journalForm, when invoked.
+export const resetJournalForm = () => {
+    const journalFormDOMReference = document.getElementById("journalForm");
+    journalFormDOMReference.reset();
+}

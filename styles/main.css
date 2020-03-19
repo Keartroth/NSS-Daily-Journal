@@ -1,5 +1,10 @@
+@import './elements/editJournalEntryDialog.css';
 body {
     background-color: burlywood;
+}
+
+.bold {
+    font-weight: bolder;
 }
 
 .chaiseLoungeQuestion {
@@ -32,6 +37,11 @@ body {
     margin-left: 108px;
 }
 
+.flex {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
 .formContainer {
     display: inline-block;
     margin-top: 260px;
@@ -55,6 +65,10 @@ body {
 .journalEntry {
     background-color: whitesmoke;
     margin-top: 10px;
+}
+
+.journalEntry p {
+    white-space: pre-line;
 }
 
 .labels {
