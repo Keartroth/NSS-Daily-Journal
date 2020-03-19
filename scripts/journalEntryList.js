@@ -1,5 +1,5 @@
 import { useJournalEntries } from "./journalDataProvider.js"
-import journalEntryComponent from "./journalEntry.js"
+import { journalEntryComponent } from "./journalEntry.js"
 
 /*
  *  Purpose:
@@ -8,19 +8,22 @@ import journalEntryComponent from "./journalEntry.js"
  *    data provider component
  */
 
-const entryListComponent = () => {
-    // DOM reference to where all entries will be rendered
-    const entryLog = document.querySelector(".formContainer");
-    // Use the journal entry data from the data provider component
+const eventHub = document.querySelector(".container");
+const entryLog = document.querySelector(".entriesContainer");
+
+export const entryListComponent = () => {
+    entryLog.innerHTML = "";
     const entries = useJournalEntries();
 
     for (const entry of entries) {
-        /*
-            Invoke the component that returns an
-            HTML representation of a single entry
-        */
         entryLog.innerHTML += journalEntryComponent(entry);
     }
 }
 
-export default entryListComponent;
+/*
+*   Listens for the custom event, noteStateChanged, on the eventHub
+*   and calls the function getNotes to re-evaluate the notes array.
+*/
+eventHub.addEventListener("entriesStateChanged", event => {
+    entryListComponent();
+})
