@@ -1,3 +1,5 @@
+import { resetJournalForm } from "./JournalEntryForm.js";
+
 /*
  *   Journal data provider for Daily Journal application
  *
@@ -5,6 +7,7 @@
  *      functions that other modules can use to filter
  *      the entries for different purposes.
  */
+
 
 const eventHub = document.querySelector(".container");
 
@@ -18,6 +21,7 @@ export const useJournalEntries = () => {
         (currentEntry, nextEntry) =>
             Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
     )
+    .reverse();
     return sortedByDate;
 }
 
@@ -42,6 +46,7 @@ export const saveEntry = entry => {
         body: JSON.stringify(entry)
     })
     .then(getEntries)
+    .then(resetJournalForm)
     .then(dispatchStateChangeEvent);
 }
 
@@ -49,6 +54,19 @@ export const saveEntry = entry => {
 export const deleteEntry = entryId => {
     return fetch(`http://localhost:8088/entries/${entryId}`, {
         method: "DELETE"
+    })
+    .then(getEntries)
+    .then(dispatchStateChangeEvent);
+}
+
+// Edits the data in a JSON file, and then dispatches a custom event to the eventHub to refresh the entries array.
+export const editEntry = (entry) => {
+    return fetch(`http://localhost:8088/entries/${entry.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(entry)
     })
     .then(getEntries)
     .then(dispatchStateChangeEvent);
@@ -67,5 +85,12 @@ export const dispatchStateChangeEvent = () => {
 eventHub.addEventListener("deleteEntryEvent", theDeleteEvent => {
     deleteEntry(theDeleteEvent.detail.entry)
     .then(getEntries)
-    .then(dispatchStateChangeEvent)
+})
+/*
+*   Listens for the custom event "editEntryClickedDetailEvent" which invokes the function,
+*   editEntry, and then dispatches a custom event to the eventHub to refresh the entries array.
+*/
+eventHub.addEventListener("editEntryClickedDetailEvent", theEditEvent => {
+    editEntry(theEditEvent.detail.entry)
+    .then(getEntries)
 })
