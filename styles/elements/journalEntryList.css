@@ -1,0 +1,33 @@
+/* CSS style sheet for journal etnry list. */
+
+.button--change {
+    background-color: tan;
+    display: block;
+    font-family: 'Eagle Lake', cursive;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 1em;
+}
+
+.journalEntry {
+    background-color: whitesmoke;
+    margin-top: 10px;
+    padding: 1.5rem;
+}
+
+.journalEntry p {
+    white-space: pre-line;
+}
+
+.entryList--concepts {
+    margin: auto;
+}
+
+.entryList--date {
+    margin: auto;
+}
+
+.entryList--mood {
+    margin: auto;
+}
