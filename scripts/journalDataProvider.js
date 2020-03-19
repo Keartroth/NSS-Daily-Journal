@@ -6,6 +6,8 @@
  *      the entries for different purposes.
  */
 
+const eventHub = document.querySelector(".container");
+
 // Sets an empty array, entries, for getEntries to place the parsed data in.
 let entries = [];
 
@@ -30,15 +32,21 @@ export const getEntries = () => {
     )
 }
 
+// Converts a JavaScript string of data to a JSON string, Posts it, and then dispatches a custom event to the eventHub to refresh the journal entries.
+export const saveEntry = entry => {
+    return fetch('http://localhost:8088/entries', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entry)
+    })
+    .then(getEntries)
+    .then(dispatchStateChangeEvent);
+}
 
-/*
-    You export a function that provides a version of the
-    raw data in the format that you want
-*/
-// export const useJournalEntries = () => {
-//     const sortedByDate = journal.sort(
-//         (currentEntry, nextEntry) =>
-//             Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
-//     )
-//     return sortedByDate;
-// }
+// Dispatches entryStateChanged to the eventHub so that getEntries will update the array entries.
+export const dispatchStateChangeEvent = () => {
+    const entryStateChanged = new CustomEvent("entriesStateChanged");
+    eventHub.dispatchEvent(entryStateChanged);
+}

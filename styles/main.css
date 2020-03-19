@@ -15,6 +15,15 @@ body {
     width: 335px;
 }
 
+.container {
+    background-image: url("https://www.tagesspiegel.de/images/1496907/24145614/2-format6001.jpg?inIsFirst=true");
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+    width: 750px;
+}
+
 #date {
     margin-left: 49px;
 }
@@ -28,14 +37,6 @@ body {
     margin-top: 260px;
 }
 
-.formStyling {
-    background-image: url("https://www.tagesspiegel.de/images/1496907/24145614/2-format6001.jpg?inIsFirst=true");
-    background-repeat: no-repeat;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -20px;
-    width: 750px;
-}
 
 #journal {
     width: 745px;
