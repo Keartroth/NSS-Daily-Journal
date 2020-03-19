@@ -45,8 +45,27 @@ export const saveEntry = entry => {
     .then(dispatchStateChangeEvent);
 }
 
+// Deletes a string of entry data in a JSON file, and then dispatches a custom event to the eventHub to refresh the entries array.
+export const deleteEntry = entryId => {
+    return fetch(`http://localhost:8088/entries/${entryId}`, {
+        method: "DELETE"
+    })
+    .then(getEntries)
+    .then(dispatchStateChangeEvent);
+}
+
 // Dispatches entryStateChanged to the eventHub so that getEntries will update the array entries.
 export const dispatchStateChangeEvent = () => {
     const entryStateChanged = new CustomEvent("entriesStateChanged");
     eventHub.dispatchEvent(entryStateChanged);
 }
+
+/*
+*   Listens for the custom event "deleteEntryEvent" which invokes the function,
+*   deleteEntry, and then sets an updated array to render the entry list again.
+*/
+eventHub.addEventListener("deleteEntryEvent", theDeleteEvent => {
+    deleteEntry(theDeleteEvent.detail.entry)
+    .then(getEntries)
+    .then(dispatchStateChangeEvent)
+})
