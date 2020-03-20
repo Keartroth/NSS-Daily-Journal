@@ -1,0 +1,18 @@
+
+.filter--label {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.filter--mood {
+    font-family: monospace;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding-bottom: 1.5em;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 1.5em;
+    text-align: center;
+}

@@ -20,10 +20,36 @@ export const entryListComponent = () => {
     }
 }
 
+const filteredEntryListComponent = (entryObjectArray) => {
+    entryLog.innerHTML = "";
+    for (const entry of entryObjectArray) {
+        entryLog.innerHTML += journalEntryComponent(entry);
+    }
+}
+
 /*
-*   Listens for the custom event, noteStateChanged, on the eventHub
-*   and calls the function getNotes to re-evaluate the notes array.
+*   Listens for the custom event, entriesStateChanged, on the eventHub
+*   and calls the function entryListComponent to re-evaluate the entries array.
 */
 eventHub.addEventListener("entriesStateChanged", event => {
     entryListComponent();
+})
+/*
+*   Listens for the custom event, moodRadialChosen, on the eventHub and
+*   filters the array of journal entries and render the entries to the DOM.
+*/
+eventHub.addEventListener("moodRadialChosen", changeEvent => {
+    if (changeEvent.detail.mood === "show all entries") {
+        entryListComponent();
+    } else {
+        const arrayOfJournalEntries = useJournalEntries();
+        const mood = changeEvent.detail.mood;
+        const filteredArray = arrayOfJournalEntries.filter((entry) => {
+            if (entry.mood === mood) {
+                return true
+            }
+            return false
+        })
+        filteredEntryListComponent(filteredArray);
+    }
 })

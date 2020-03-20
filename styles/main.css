@@ -2,6 +2,7 @@
 @import './elements/journalEntryButton.css';
 @import './elements/journalEntryForm.css';
 @import './elements/journalEntryList.css';
+@import './elements/moodFilters.css';
 
 body {
     background-color: burlywood;
