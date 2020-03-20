@@ -9,7 +9,7 @@ const filtersContentTarget = document.querySelector(".filters");
 export const SearchBarFilter = () => {
     return `
     <fieldset class="fieldset filter--searchBar">
-        <label for="entriesSearch">Search Journal Entries:</label>
+        <label for="entriesSearch"><span class="bold">Search Journal Entries</span>:</label>
         <input type="search" id="entriesSearch" name="entriesSearch">
     </fieldset>
     `

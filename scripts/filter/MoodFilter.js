@@ -1,6 +1,9 @@
 const eventHub = document.querySelector(".container");
 const filtersContentTarget = document.querySelector(".filters");
-
+/*
+ *  Defines the function, MoodFilter, which evaluates to a string HTML representation of
+ *   a fieldset containing radial buttons with emotional values to choose from.
+*/
 export const MoodFilter = () => {
     return `
     <fieldset class="fieldset filter--mood">

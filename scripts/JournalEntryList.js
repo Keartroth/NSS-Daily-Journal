@@ -5,7 +5,7 @@ import { journalEntryComponent } from "./journalEntry.js"
  *  Purpose:
  *    To render as many journal entry components as
  *    there are items in the collection exposed by the
- *    data provider component
+ *    data provider component from entries.json.
  */
 
 const eventHub = document.querySelector(".container");

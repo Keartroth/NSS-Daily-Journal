@@ -1,1 +1,10 @@
 /* CSS style sheet for search bar. */
+
+#entriesSearch {
+    width: 50%;
+}
+.filter--searchBar {
+    background-color: bisque;
+    font-family: monospace;
+    text-align: center;
+}

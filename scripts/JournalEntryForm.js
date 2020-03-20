@@ -1,9 +1,9 @@
 import { saveEntry } from "./journalDataProvider.js";
 
-// Purpose: To render a journal entry form to the DOM.
 const eventHub = document.querySelector(".container");
 const formContainerContentTarget = document.querySelector(".formContainer");
 
+// Purpose: To render a journal entry form to the DOM.
 export const JournalEntryForm = () => {
     formContainerContentTarget.innerHTML += `
     <form action="" class="form" id="journalForm">

@@ -30,6 +30,10 @@ body {
     width: 750px;
 }
 
+.filters {
+    margin: 15px 0px;
+}
+
 .flex {
     display: flex;
     flex-wrap: nowrap;
