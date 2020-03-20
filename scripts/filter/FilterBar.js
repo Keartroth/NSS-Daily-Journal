@@ -1,4 +1,5 @@
 import { MoodFilter } from "./MoodFilter.js";
+import { SearchBarFilter } from "./SearchBar.js";
 
 const filtersContentTarget = document.querySelector(".filters");
 
@@ -6,6 +7,7 @@ const filtersContentTarget = document.querySelector(".filters");
 export const FilterBar = () => {
     const filterRender = () => {
         filtersContentTarget.innerHTML = `
+            ${SearchBarFilter()}
             ${MoodFilter()}
         `
     }

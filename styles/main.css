@@ -3,6 +3,7 @@
 @import './elements/journalEntryForm.css';
 @import './elements/journalEntryList.css';
 @import './elements/moodFilters.css';
+@import './elements/searchBar.css';
 
 body {
     background-color: burlywood;
