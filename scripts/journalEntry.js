@@ -28,11 +28,11 @@ export const journalEntryComponent = (record) => {
     `;
 }
 
-// Listens for a "click" event and dispatches the custom event, deleteEntryEvent, to the eventHub.
+// Listens for a "click" event and dispatches the custom event, deleteEntryWarningDetailEvent, to the eventHub.
 entryLogContentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("deleteEntry--")) {
         const [prefix, chosenEntryId] = clickEvent.target.id.split("--");
-        const deleteEntry = new CustomEvent("deleteEntryEvent", {
+        const deleteEntry = new CustomEvent("deleteEntryWarningDetailEvent", {
             detail: {
                 entry: chosenEntryId,
             }
@@ -50,12 +50,9 @@ entryLogContentTarget.addEventListener(
     clickEvent => {
     if (clickEvent.target.id.startsWith("editEntry--")) {
         const [prefix, chosenEntry] = clickEvent.target.id.split("--");
-        // const dateUnsplit = document.querySelector(`#entry--date--${chosenEntry}`).innerText;
-        // const [dateprefix, entryDate] = dateUnsplit.split(": ");
         const openDialogBox = new CustomEvent("editDialogButtonClickedDetailEvent", {
             detail: {
                 entry: chosenEntry,
-                // date: entryDate
             }
         })
         eventHub.dispatchEvent(openDialogBox);

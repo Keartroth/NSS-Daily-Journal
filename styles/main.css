@@ -4,6 +4,7 @@
 @import './elements/journalEntryList.css';
 @import './elements/moodFilters.css';
 @import './elements/searchBar.css';
+@import './elements/deleteEntryWarningDialog.css';
 
 body {
     background-color: burlywood;

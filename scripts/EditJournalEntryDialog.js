@@ -13,7 +13,7 @@ export const editJournalEntryDialog = (journalEntryObject) => {
     const entryMood = `${journalEntryObject.mood}`;
 
     editDialogContentTarget.innerHTML = `
-        <dialog class="dialog--editEntry" id="editEntry--details">
+        <dialog class="dialog--editEntry" id="dialogBox--details">
             <form action="" class="form" id="editEntry--journalForm">
                 <label for="concepts" id="editEntry--conceptsLabel" class="labels">Concepts Covered</label>
                 <label for="mood" id="editEntry--moodLabel" class="labels">Current Mood</label>
@@ -71,42 +71,41 @@ eventHub.addEventListener("editDialogButtonClickedDetailEvent", CustomEvent => {
     )
     editJournalEntryDialog(entryObjectSelected);
 
-    const editDialogBox = document.querySelector("#editEntry--details");
+    const editDialogBox = document.querySelector("#dialogBox--details");
     editDialogBox.showModal();
+})
+
+// Listens for a "click" event and dispatches a custom event to edit corresponding journal entry object in entries.json.
+editDialogContentTarget.addEventListener("click", theEditEvent => {
+    if (theEditEvent.target.id.startsWith("button--submit--")) {
+        const [prefix, action, editedEntryId] = theEditEvent.target.id.split('--');
+        const entryDate = document.querySelector("#editEntry--date").value;
+        const entryConcepts = document.querySelector("#editEntry--concepts").value;
+        const entryEntry = document.querySelector("#editEntry--journal").value;
+        const entryMood = document.querySelector("#editEntry--mood").value;
+
+        const editedEntryObject = {
+            "date": entryDate,
+            "concept": entryConcepts,
+            "entry": entryEntry,
+            "mood": entryMood,
+            "id": editedEntryId
+        }
+
+        const theEditEntryEvent = new CustomEvent("editEntryClickedDetailEvent", {
+            detail: {
+                entry: editedEntryObject,
+            }
+        })
+        eventHub.dispatchEvent(theEditEntryEvent);
+        document.getElementById("dialogBox--details").close()
+    }
 })
 
 // Listens for a "click" event and closes a corresponding dialog box.
 editDialogContentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "button--close") {
-        const theDialogElement = document.querySelector("#editEntry--details");
+        const theDialogElement = document.querySelector("#dialogBox--details");
         theDialogElement.close();
     }
 })
-
-// Listens for a "click" event and dispatches a custom event to edit corresponding journal entry object in entries.json.
-editDialogContentTarget.addEventListener("click", theEditEvent => {
-        if (theEditEvent.target.id.startsWith("button--submit--")) {
-            const [prefix, action, editedEntryId] = theEditEvent.target.id.split('--');
-            const entryDate = document.querySelector("#editEntry--date").value;
-            const entryConcepts = document.querySelector("#editEntry--concepts").value;
-            const entryEntry = document.querySelector("#editEntry--journal").value;
-            const entryMood = document.querySelector("#editEntry--mood").value;
-
-            const editedEntryObject = {
-                "date": entryDate,
-                "concept": entryConcepts,
-                "entry": entryEntry,
-                "mood": entryMood,
-                "id": editedEntryId
-            }
-
-            const theEditEntryEvent = new CustomEvent("editEntryClickedDetailEvent", {
-                detail: {
-                    entry: editedEntryObject,
-                }
-            })
-            eventHub.dispatchEvent(theEditEntryEvent);
-            document.getElementById("editEntry--details").close()
-        }
-    }
-)
