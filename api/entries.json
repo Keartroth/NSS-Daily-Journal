@@ -27,6 +27,13 @@
       "entry": "Today we covered how to add a dialog box component that we re-use repeatedly by rendering it only when the corresponding button is clicked according to the detail sent along with the custom click event (rather than rendering to the DOM for each element that requires a dialog box). It is a fantastic solution that I believe I will go back and implement for all my projects once I have finished with Daily Journal.\n\nTwo new things we learned today are:\nparseInt(), which is a function that parses a string and returns an integer.\n.find(), which is an array method similar to filter, but it instead returns ONLY the first corresponding object in an array, rather than an array with ALL corresponding objects.",
       "mood": "🙃 normal 🙃",
       "id": 4
+    },
+    {
+      "date": "2020-03-20",
+      "concept": "Daily Journal",
+      "entry": "Today we continued to work on personal projects. While working on the Daily Journal I focused on the search bar. I had issues with object's being pushed into my filter array multiple times as each value of the object was iterated (sometimes multiple values met the filter criteria, and so the object would be push in for each such instance).\n\nI attempted to solve the issue with if/else statements and a .find iteration of the array I was filling, but Mo suggested something much cleaner. Instead, I simply set a variable to false within the final for loop, and once an object had passed through an if (variable === false) to be pushed into the new array, the boolean variable changes to true. This prevents the object from ever meeting the requirements to be once again pushed into the filter array. I love it!",
+      "mood": "😀 happy 😁",
+      "id": 5
     }
   ]
 }

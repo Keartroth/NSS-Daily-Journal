@@ -1,0 +1,20 @@
+/* Css style sheet for Deletion Warning Dialog element. */
+
+.button--delete {
+    background-color: rgb(212, 166, 79);
+    display: block;
+    font-family: monospace;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 1em;
+}
+
+.dialog--deleteEntry {
+    text-align: center;
+}
+
+.dialog--deleteEntry h4 {
+    color: darkred;
+    font-size: 2em;
+}
