@@ -5,7 +5,10 @@
 
 const eventHub = document.querySelector(".container");
 const entryLogContentTarget = document.querySelector(".entriesContainer");
-
+/*
+ *  Defines the function, journalEntryComponent (which accepts a journal entry object from entries.json 
+ *  as the parameter of an argument) and evaluates to a string HTML representation of that journal entry.
+*/
 export const journalEntryComponent = (record) => {
     return `
         <section id="entry--${record.id}" class="journalEntry">

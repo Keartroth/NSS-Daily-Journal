@@ -20,18 +20,18 @@ export const editJournalEntryDialog = (journalEntryObject) => {
                 <label for="date" id="editEntry--dateLabel" class="labels">Today's Date</label><br>
                 <input type="text" name="Concepts" id="editEntry--concepts" />
                 <select type="select" name="Mood" id="editEntry--mood">
-                    <option value="😍 excited 🤩" id="editEntry--excited">😍 excited 🤩</option>
-                    <option value="💣.🧠.💥.🤯" id="editEntry--mindBlown">💣.🧠.💥.🤯</option>
-                    <option value="😤 pumped 😆" id="editEntry--pumped">😤 pumped 😆</option>
-                    <option value="😀 happy 😁" id="editEntry--happy">😀 happy 😁</option>
-                    <option value="🧐 smart 🤓" id="editEntry--smart">🧐 smart 🤓</option>
-                    <option value="😏 funky 😎" id="editEntry--funky">😏 funky 😎</option>
-                    <option value="🙃 normal 🙃" id="editEntry--normal">🙃 normal 🙃</option>
-                    <option value="😢 sorrowful 😭" id="editEntry--sorrowful">😢 sorrowful 😭</option>
                     <option value="😡 anrgy 🤬" id="editEntry--angry">😡 anrgy 🤬</option>
-                    <option value="🤢 sick 🤮" id="editEntry--sick">🤢 sick 🤮</option>
                     <option value="😶 ennui 😑" id="editEntry--ennui">😶 ennui 😑</option>
+                    <option value="😍 excited 🤩" id="editEntry--excited">😍 excited 🤩</option>
+                    <option value="😏 funky 😎" id="editEntry--funky">😏 funky 😎</option>
+                    <option value="😀 happy 😁" id="editEntry--happy">😀 happy 😁</option>
+                    <option value="💣.🧠.💥.🤯" id="editEntry--mindBlown">💣.🧠.💥.🤯</option>
+                    <option value="🙃 normal 🙃" id="editEntry--normal">🙃 normal 🙃</option>
                     <option value="😖 overwhelmed 😵" id="editEntry--overwhelmed">😖 overwhelmed 😵</option>
+                    <option value="😤 pumped 😆" id="editEntry--pumped">😤 pumped 😆</option>
+                    <option value="🤢 sick 🤮" id="editEntry--sick">🤢 sick 🤮</option>
+                    <option value="🧐 smart 🤓" id="editEntry--smart">🧐 smart 🤓</option>
+                    <option value="😢 sorrowful 😭" id="editEntry--sorrowful">😢 sorrowful 😭</option>
                     <option value="☠ PIT OF DESPAIR ☠" id="editEntry--pitOfDepair">☠ PIT OF DESPAIR ☠</option>
                 </select>
                 <input type="date" name="Date" id="editEntry--date"/><br>

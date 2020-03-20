@@ -3,6 +3,7 @@
 @import './elements/journalEntryForm.css';
 @import './elements/journalEntryList.css';
 @import './elements/moodFilters.css';
+@import './elements/searchBar.css';
 
 body {
     background-color: burlywood;
@@ -27,6 +28,10 @@ body {
     margin-right: auto;
     margin-top: -20px;
     width: 750px;
+}
+
+.filters {
+    margin: 15px 0px;
 }
 
 .flex {

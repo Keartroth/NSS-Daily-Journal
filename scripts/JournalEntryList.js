@@ -5,7 +5,7 @@ import { journalEntryComponent } from "./journalEntry.js"
  *  Purpose:
  *    To render as many journal entry components as
  *    there are items in the collection exposed by the
- *    data provider component
+ *    data provider component from entries.json.
  */
 
 const eventHub = document.querySelector(".container");
@@ -20,10 +20,10 @@ export const entryListComponent = () => {
     }
 }
 
-const filteredEntryListComponent = (entryObjectArray) => {
+const filteredEntryListComponent = (arrayOfEntryObjects) => {
     entryLog.innerHTML = "";
-    for (const entry of entryObjectArray) {
-        entryLog.innerHTML += journalEntryComponent(entry);
+    for (const entryObject of arrayOfEntryObjects) {
+        entryLog.innerHTML += journalEntryComponent(entryObject);
     }
 }
 
@@ -36,7 +36,7 @@ eventHub.addEventListener("entriesStateChanged", event => {
 })
 /*
 *   Listens for the custom event, moodRadialChosen, on the eventHub and
-*   filters the array of journal entries and render the entries to the DOM.
+*   filters the array of journal entries and renders the entries to the DOM.
 */
 eventHub.addEventListener("moodRadialChosen", changeEvent => {
     if (changeEvent.detail.mood === "show all entries") {
@@ -50,6 +50,38 @@ eventHub.addEventListener("moodRadialChosen", changeEvent => {
             }
             return false
         })
+        filteredEntryListComponent(filteredArray);
+    }
+})
+/*
+*   Listens for the custom event, searchInitialized, on the eventHub and
+*   filters the array of journal entries and renders the entries to the DOM.
+*/
+eventHub.addEventListener("searchInitialized", searchEvent => {
+    if (searchEvent.detail.search === "") {
+        entryListComponent();
+    } else {
+        const arrayOfJournalEntries = useJournalEntries();
+        const searchCriteria = searchEvent.detail.search;
+        let filteredArray = [];
+        
+        for (const entry of arrayOfJournalEntries) {
+            let duplicateCheck = false;
+
+            for (const value of Object.values(entry)) {
+                let valuesString = null;
+
+                if (typeof value !== 'number') {
+                    valuesString = value.includes(searchCriteria);
+                }
+                if (value === searchCriteria || valuesString === true) {
+                    if (duplicateCheck === false) {
+                        duplicateCheck = true;
+                        filteredArray.push(entry);
+                    }
+                }    
+            }
+        }
         filteredEntryListComponent(filteredArray);
     }
 })
